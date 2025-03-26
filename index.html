@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Coding Bot Interface</title>
 </head>
 <body>
@@ -15,19 +16,18 @@
     document.getElementById("generate-btn").addEventListener("click", async function() {
       const prompt = document.getElementById("prompt").value;
       try {
-        // Replace YOUR_CODESPACE_URL with the actual public URL provided by Codespaces
-        const response = await fetch('https://glowing-acorn-g4x6xj9g4jq6fp9q6-5000.app.github.dev/generate', {
-          method: 'POST',
+        const response = await fetch("https://glowing-acorn-g4x6xj9g4jq6fp9q6-5000.app.github.dev/generate", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json'
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({ prompt: prompt })
         });
         const data = await response.json();
         document.getElementById("result").textContent = data.generated_text;
       } catch (error) {
-        console.error('Error:', error);
-        document.getElementById("result").textContent = 'An error occurred.';
+        console.error("Error:", error);
+        document.getElementById("result").textContent = "An error occurred: " + error;
       }
     });
   </script>
