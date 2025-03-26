@@ -1,4 +1,4 @@
-# Creative Coding Bot
+# Coding Bot
 
 A Flask-based backend that leverages the Hugging Face Inference API for creative text generation and automatic speech recognition (ASR) using the Microsoft Phi-4 multimodal instruct model. This project is designed to work in GitHub Codespaces and can be integrated with a GitHub Pages frontend.
 
